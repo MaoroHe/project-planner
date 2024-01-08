@@ -1,3 +1,4 @@
+import * as dateFns from 'https://cdn.jsdelivr.net/npm/date-fns@2.24.0/esm/index.js';
 export function storage() {
     let storages = JSON.parse(window.localStorage.getItem('project')) || [];
 
@@ -14,21 +15,24 @@ export function storage() {
         const descInput = document.getElementById('form_descrip');
         const descContent = descInput.value;
 
-        const today = new Date();
+        const dateInput = document.getElementById('form_date');
+        const endDate = dateInput.value;
 
-        console.log(today)
+        const today = dateFns.format(new Date(), 'MM/dd/yyyy');
 
-        if (projectName !== '') {
-            if (descContent !== '') {
-                const newProject = {
-                    name: projectName,
-                    description: descContent,
-                    id: uniqueId(),
-                    creationDate: today,
-                };
+        let state = 'to do';
 
-                storages.push(newProject);
+        if (projectName.length <= 5) {
+            const newProject = {
+                name: projectName,
+                description: descContent,
+                id: uniqueId(),
+                creationDate: today,
+                end: endDate,
+                state: state,
             };
+
+            storages.push(newProject);
         };
 
         localStorage.setItem('project', JSON.stringify(storages));
