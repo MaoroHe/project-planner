@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,26 @@
     <script type="module" src="/assets/js/script.js" defer></script>
     <title>Project Planer</title>
 </head>
+
 <body>
     <header>
-        <div class = "form">
-            <form class = "formulaire">
-                <label for = "form_name">Nom de la tâche</label>
-                <input type = "text" id = "form_name" name ="form_name">
-                <label for = "form_descrip">Décrire la tâche</label>
-                <input type = "text" id = "form_descrip" name ="form_descrip">
-                <button type = "submit" id="form_valid">Valider</button>
+        <div class="form">
+            <form class="formulaire">
+                <label for="form_name">Nom de la tâche</label>
+                <input type="text" id="form_name" name="form_name">
+                <label for="form_descrip">Décrire la tâche</label>
+                <input type="text" id="form_descrip" name="form_descrip">
+                <button type="submit" id="form_valid">Valider</button>
             </form>
         </div>
 
     </header>
-    <main></main>
+    <main class="colonne">
+        <div class="colonne__toDo"></div>
+        <div class="colonne__doing"></div>
+        <div class="colonne__done"></div>
+    </main>
     <footer></footer>
 </body>
+
 </html>
