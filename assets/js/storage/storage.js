@@ -15,19 +15,19 @@ export function storage() {
         const descInput = document.getElementById('form_descrip');
         const descContent = descInput.value;
 
+        const today = dateFns.format(new Date(), 'MM/dd/yyyy');
+
         const dateInput = document.getElementById('form_date');
         const endDate = dateInput.value;
 
-        const today = dateFns.format(new Date(), 'MM/dd/yyyy');
-
         let state = 'to do';
 
-        const result = dateFns.formatDistanceToNow(
-            new Date(2024, 2, 1),
-            {addSuffix: true}
-          )
-
-        console.log(result)
+        //
+        const dayBetween = dateFns.differenceInDays(
+            new Date(),
+            new Date(endDate),
+        );
+        //
 
         if (projectName.length >= 3 && projectName.length <= 256) {
             if (descContent.length !== 0) {
