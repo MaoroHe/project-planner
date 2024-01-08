@@ -1,18 +1,16 @@
+import {storage } from "./storage/storage.js";
 
-
-function trierParStatut(taches) {
-    let storages = JSON.parse(window.localStorage.getItem('project'));
-    let triee = {
-      "to do": [],
-      "doing": [],
-      "done": []
-    };
+export function trierParStatut() {
+  const taches = storage();
   
-    taches.forEach(tache => {
-      triee[tache.status].push(tache);
-    });
-  
+  return taches.reduce((triee, project) => {
+    triee[project.state].push(project);
     return triee;
-  }
-  
-  let tachesTrie = trierParStatut(storage);
+  }, {
+    "to do": [],
+    "doing": [],
+    "done": []
+  });
+}
+
+
