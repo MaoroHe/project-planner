@@ -4,13 +4,18 @@ export function genererElementProjet(project) {
     const elementProjet = document.createElement('div');
     elementProjet.classList.add('project');
     elementProjet.innerHTML = `
+    <button class="delete"></button>
     <h3>${project.name}</h3>
     <p>${project.description}</p>
     <p>"date de commencement : ${project.creationDate}"<p>
     <p>"date de fin prevue le : ${project.end}"<p>
-    <p>${project.state}</p>
-        
+    <select name="choix" class="selection ${project.state}">
+            <option value="To do" class="colonne__toDo">To do</option>
+            <option value="Doing" class="colonne__doing">Doing</option>
+            <option value="Done" class="colonne__done">Done</option>
+        </select>
     `;
+
     return elementProjet;
 }
 
