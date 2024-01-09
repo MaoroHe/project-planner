@@ -4,8 +4,11 @@ export function storage() {
 
     const btn = document.getElementById('form_valid');
 
-    function uniqueId() {
-        return Date.now().toString(16) + Math.floor(Math.random() * 1000).toString(16)
+    function guidGenerator() {
+        var S4 = function() {
+            return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+        };
+        return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
     }
 
     btn.addEventListener('click', () => {
@@ -17,17 +20,11 @@ export function storage() {
 
         const today = dateFns.format(new Date(), 'MM/dd/yyyy');
 
+        const days = dateFns.addDays(new Date(), 14)
         const dateInput = document.getElementById('form_date');
-        const endDate = dateInput.value;
+        const endDate = dateInput.value || days;
 
         let state = 'to do';
-
-        //
-        const dayBetween = dateFns.differenceInDays(
-            new Date(),
-            new Date(endDate),
-        );
-        //
 
         if (projectName.length >= 3 && projectName.length <= 256) {
             if (descContent.length !== 0) {
@@ -35,7 +32,7 @@ export function storage() {
                     const newProject = {
                         name: projectName,
                         description: descContent,
-                        id: uniqueId(),
+                        id: guidGenerator(),
                         creationDate: today,
                         end: endDate,
                         state: state,

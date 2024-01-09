@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 20px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+#form_valid {
+    background-color: transparent;
+    border: 0px transparent;
+
+    // reset
+
+    background-color: #F3EEEA;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 22px;
+    width: 60px;
+    margin-left: auto;
+    font-weight: 600;
+
+    // transition
+
+    transition: all 150ms linear;
+
+    &:hover {
+        border: 1.5px solid black;
+    }
+}
+
+input[type=text] {
+    background-color: #F3EEEA;
+    border: 0px;
+    border-radius: 25px;
+    padding: 3px;
+    margin-left: 2px;
+    margin-right: 5px;
+}
+
+input[type=date] {
+    background-color: #F3EEEA;
+    border: 0px;
+    border-radius: 25px;
+    padding: 3px;
+    margin-left: 3px;
+    margin-right: 5px;
+}
