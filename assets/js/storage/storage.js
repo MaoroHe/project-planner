@@ -46,7 +46,7 @@ export function storage() {
             const newProject = {
                 name: projectName,
                 description: descContent,
-                id: uniqueId(),
+                id: guidGenerator(),
                 creationDate: today,
                 end: endDate,
                 state: state,
