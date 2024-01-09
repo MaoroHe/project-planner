@@ -46,4 +46,11 @@ input[type=date] {
   padding: 3px;
   margin-left: 3px;
   margin-right: 5px;
+}
+
+.colonne {
+  display: flex;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
 }/*# sourceMappingURL=style.css.map */
