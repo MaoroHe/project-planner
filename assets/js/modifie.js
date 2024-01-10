@@ -19,6 +19,8 @@ export function modifierTache() {
             document.querySelector('#form_modif').disabled = false;
             document.querySelector('#form_valid').disabled = true;
 
+            document.querySelector('dialog').showModal();
+
         })
 
     })

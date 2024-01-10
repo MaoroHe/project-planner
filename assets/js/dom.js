@@ -1,4 +1,6 @@
 import { trierParStatut } from "./tri.js";
+import { deletes } from "./delete/delete.js";
+import { modifierTache } from "./modifie.js";
 
 let colonnesMap
 
@@ -73,6 +75,10 @@ export function afficherProjets() {
         });
     });
     gererChoix(); 
-}
-    gererChoix();
+    document.querySelector('#afficherPopup').addEventListener('click',()=>{
+        document.querySelector('dialog').showModal();
+    })
 
+    deletes();
+    modifierTache()
+}

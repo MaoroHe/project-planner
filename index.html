@@ -12,40 +12,45 @@
 
 <body>
     <header>
+
         <select name="affichage" class="affiche" id="displayMode">
             <option value="Normal">Normal</option>
             <option value="JoursRestant">Nombres de jours restant</option>
             <option value="parTitre">Par titre</option>
             <option value="uneColonne">Une seul colonne</option>
         </select>
-        <div class = "form">
-            <form class = "formulaire">
-                <label for = "form_name">Nom de la tâche</label>
-                <input type = "text" id = "form_name" name ="form_name">
-                <label for = "form_descrip">Décrire la tâche (optionel)</label>
-                <input type = "text" id = "form_descrip" name ="form_descrip">
-                <label for="form_date">Date de fin (optionel)</label>
-                <input type="date" id="form_date" name="form_date" placeholder="dd-mm-yyyy">
-                <button type = "submit" id="form_valid">Valider</button>
-                <button type="submit" disabled id="form_modif">Modifier</button>
-            </form>
-        </div>
+        <button id = "afficherPopup">Ajouter tâche</button>
+        <dialog>
+            <div class="form">
+                <form class="formulaire">
+                    <label for="form_name">Nom de la tâche</label>
+                    <input type="text" id="form_name" name="form_name">
+                    <label for="form_descrip">Décrire la tâche (optionel)</label>
+                    <input type="text" id="form_descrip" name="form_descrip">
+                    <label for="form_date">Date de fin (optionel)</label>
+                    <input type="date" id="form_date" name="form_date" placeholder="dd-mm-yyyy">
+                    <button type="submit" id="form_valid">Valider</button>
+                    <button type="submit" disabled id="form_modif">Modifier</button>
+                </form>
+            </div>
+        </dialog>
     </header>
     <main class="colonne">
         <div class="todo">
-        <h2>To Do</h2>
-        <div class="colonne__toDo" ></div>
+            <h2>To Do</h2>
+            <div class="colonne__toDo"></div>
         </div>
         <div class="doing">
-        <h2>Doing</h2>
-        <div class="colonne__doing"></div>
+            <h2>Doing</h2>
+            <div class="colonne__doing"></div>
         </div>
         <div class="done">
-        <h2>Done</h2>
-        <div class="colonne__done"></div>
+            <h2>Done</h2>
+            <div class="colonne__done"></div>
         </div>
-        <div class="colonne__unique" ></div>
+        <div class="colonne__unique"></div>
     </main>
     <footer></footer>
 </body>
+
 </html>
