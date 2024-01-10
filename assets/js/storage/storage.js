@@ -18,11 +18,13 @@ export function storage() {
         const descInput = document.getElementById('form_descrip');
         const descContent = descInput.value;
 
-        const today = dateFns.format(new Date(), 'MM/dd/yyyy');
+        const today = dateFns.format(new Date(), 'dd/MM/yyyy');
+        const todays = new Date();
 
-        const days = dateFns.addDays(new Date(), 14)
+        const days = dateFns.addDays(todays, 14)
+        const dayss = dateFns.format(days, 'dd/MM/yyyy')
         const dateInput = document.getElementById('form_date');
-        const endDate = dateInput.value || days;
+        const endDate = dateInput.value || dayss;
 
         let state = 'to do';
 
@@ -36,6 +38,7 @@ export function storage() {
                         creationDate: today,
                         end: endDate,
                         state: state,
+                        dayRest: '',
                     };
         
                         storages.push(newProject);
@@ -61,11 +64,3 @@ export function storage() {
         localStorage.setItem('project', JSON.stringify(storages));
     });
 };
-
-export function triple() {
-    let storages = JSON.parse(window.localStorage.getItem('project')) || [];
-
-    let todoTab = storages.filter((state) => state == 'to do')
-
-    console.log(todoTab)
-}

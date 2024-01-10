@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
 header {
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Rubik", sans-serif;
   margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .form {
@@ -48,17 +50,65 @@ input[type=date] {
   margin-right: 5px;
 }
 
+.project {
+  display: flex;
+  width: 100%;
+  height: auto;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  border-radius: 25px;
+  margin-bottom: 25px;
+  font-family: "Rubik", sans-serif;
+}
+.project p {
+  margin: 0;
+  margin-bottom: 10px;
+  width: 90%;
+  height: auto;
+  word-wrap: break-word;
+}
+.project h3 {
+  margin: 0;
+  margin-top: 15px;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.project .delete {
+  position: absolute;
+  background-color: lightcoral;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  border: transparent;
+  right: 0;
+  margin-right: 14px;
+  margin-top: 12px;
+  transition: all 100ms linear;
+  cursor: pointer;
+}
+.project .delete:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.project .selection {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-bottom: 35px;
+}
+
 .colonne {
   display: flex;
   width: 98%;
   margin-left: auto;
   margin-right: auto;
+  justify-content: space-between;
 }
 .colonne .todo {
   display: flex;
   width: 33%;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 .colonne .todo .colonne__toDo {
@@ -78,9 +128,31 @@ input[type=date] {
   flex-direction: column;
   align-items: center;
 }
+.colonne .doing .colonne__doing {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.colonne .doing .colonne__doing .project {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
 .colonne .done {
   display: flex;
   width: 33%;
   flex-direction: column;
+  align-items: center;
+}
+.colonne .done .colonne__done {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.colonne .done .colonne__done .project {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   align-items: center;
 }/*# sourceMappingURL=style.css.map */
