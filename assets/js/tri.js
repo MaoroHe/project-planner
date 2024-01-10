@@ -10,5 +10,3 @@ export function trierParStatut() {
         "done": []
     });
 }
-
-
