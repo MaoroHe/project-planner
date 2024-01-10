@@ -1,6 +1,14 @@
 @import './form/form';
 @import './project/project';
 
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
 .colonne {
     display: flex;
     width: 98%;

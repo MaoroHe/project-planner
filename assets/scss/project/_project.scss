@@ -25,6 +25,12 @@
     }
 
     .delete {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 300;
+        color: white;
         position: absolute;
         background-color: lightcoral;
         width: 15px;
