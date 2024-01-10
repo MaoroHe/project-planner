@@ -61,3 +61,11 @@ export function storage() {
         localStorage.setItem('project', JSON.stringify(storages));
     });
 };
+
+export function triple() {
+    let storages = JSON.parse(window.localStorage.getItem('project')) || [];
+
+    let todoTab = storages.filter((state) => state == 'to do')
+
+    console.log(todoTab)
+}

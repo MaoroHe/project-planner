@@ -128,8 +128,3 @@ export function afficherProjets() {
 
     gererChoix(); // Appel de la fonction pour gérer l'événement de sélection des options
 }
-
-
-
-
-

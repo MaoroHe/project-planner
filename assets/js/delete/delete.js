@@ -5,7 +5,7 @@ export function deletes() {
     button.forEach(element => {
         element.addEventListener('click', (event) => {
             const parent = element.parentNode;
-            const index = storages.findIndex(item => item.id === element.id);
+            const index = storages.findIndex( item => item.id === element.id);
 
             console.log(index)
             console.log(element)
