@@ -29,7 +29,10 @@ export function genererElementProjet(project) {
 }
 
 function deplacerElement(element, selectedValue, colonneCible) {
-    colonneCible.appendChild(element);
+
+    if (document.querySelector('#displayMode').value !== 'uneColonne') {
+        colonneCible.appendChild(element);
+    }
 
     const taches = JSON.parse(window.localStorage.getItem('project'));
 
@@ -47,7 +50,7 @@ function gererChoix() {
             const selectedValue = event.target.value.toLowerCase();
             const elementParent = event.target.closest('.project');
             let colonneCible = colonnesMap[selectedValue];
-         
+
             deplacerElement(elementParent, selectedValue, colonneCible);
         });
     });
@@ -74,8 +77,8 @@ export function afficherProjets() {
 
         });
     });
-    gererChoix(); 
-    document.querySelector('#afficherPopup').addEventListener('click',()=>{
+    gererChoix();
+    document.querySelector('#afficherPopup').addEventListener('click', () => {
         document.querySelector('dialog').showModal();
     })
 
