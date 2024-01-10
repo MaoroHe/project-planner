@@ -9,6 +9,7 @@ storage();
 afficherProjets();
 storage();
 setInterval(dayRest, 1000);
+setTimeout(displayDayRest, 0);
 setInterval(displayDayRest, 1000);
 deletes();
 modifierTache()

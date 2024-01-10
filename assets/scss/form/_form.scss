@@ -23,7 +23,7 @@ header {
 
     // reset
 
-    background-color: #F3EEEA;
+    background-color: #EEF5FF;
     border-radius: 10px;
     cursor: pointer;
     height: 22px;
@@ -41,7 +41,7 @@ header {
 }
 
 input[type=text] {
-    background-color: #F3EEEA;
+    background-color: #EEF5FF;
     border: 0px;
     border-radius: 25px;
     padding: 3px;
@@ -50,10 +50,33 @@ input[type=text] {
 }
 
 input[type=date] {
-    background-color: #F3EEEA;
+    background-color: #EEF5FF;
     border: 0px;
     border-radius: 25px;
     padding: 3px;
     margin-left: 3px;
     margin-right: 5px;
+}
+
+#form_modif {
+    background-color: transparent;
+    border: 0px transparent;
+
+    // reset
+
+    background-color: #EEF5FF;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 22px;
+    width: 70px;
+    margin-left: 6px;
+    font-weight: 600;
+
+    // transition
+
+    transition: all 150ms linear;
+
+    &:hover {
+        border: 1.5px solid black;
+    }
 }
