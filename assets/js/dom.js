@@ -7,8 +7,8 @@ export function genererElementProjet(project) {
     elementProjet.dataset.id = project.id;
     elementProjet.classList.add('project');
     elementProjet.innerHTML = `
-        <button class="delete"></button>
-        <button class="modif">Modifier</button>
+        <button class="delete">X</button>
+        <button class="modif"></button>
         <h3>${project.name}</h3>
         <p>${project.description}</p>
         <p>date de commencement : ${project.creationDate}</p>

@@ -18,11 +18,11 @@ export function storage() {
         const descInput = document.getElementById('form_descrip');
         const descContent = descInput.value;
 
-        const today = dateFns.format(new Date(), 'dd/MM/yyyy');
+        const today = dateFns.format(new Date(), 'yyyy-MM-dd');
         const todays = new Date();
 
         const days = dateFns.addDays(todays, 14)
-        const dayss = dateFns.format(days, 'dd/MM/yyyy')
+        const dayss = dateFns.format(days, 'yyyy-MM-dd')
         const dateInput = document.getElementById('form_date');
         const endDate = dateInput.value || dayss;
 

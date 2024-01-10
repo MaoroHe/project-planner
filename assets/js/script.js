@@ -11,7 +11,6 @@ storage();
 setInterval(dayRest, 1000);
 setInterval(displayDayRest, 1000);
 deletes();
-triple();
 modifierTache()
 
 // import * as dateFns from 'https://cdn.jsdelivr.net/npm/date-fns@2.24.0/esm/index.js';
