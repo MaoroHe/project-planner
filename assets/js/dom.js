@@ -5,6 +5,7 @@ let colonnesMap
 export function genererElementProjet(project) {
     const elementProjet = document.createElement('div');
     elementProjet.dataset.id = project.id;
+    elementProjet.dataset.end = project.end;
     elementProjet.classList.add('project');
     elementProjet.innerHTML = `
         <button class="delete">X</button>
