@@ -8,6 +8,7 @@ export function genererElementProjet(project) {
     elementProjet.classList.add('project');
     elementProjet.innerHTML = `
         <button class="delete"></button>
+        <button class="modif">Modifier</button>
         <h3>${project.name}</h3>
         <p>${project.description}</p>
         <p>date de commencement : ${project.creationDate}</p>
@@ -43,13 +44,7 @@ function gererChoix() {
             const selectedValue = event.target.value.toLowerCase();
             const elementParent = event.target.closest('.project');
             let colonneCible = colonnesMap[selectedValue];
-            // if (selectedValue === 'todo') {
-            //     colonneCible = document.querySelector('.colonne__toDo');
-            // } else if (selectedValue === 'doing') {
-            //     colonneCible = document.querySelector('.colonne__doing');
-            // } else if (selectedValue === 'done') {
-            //     colonneCible = document.querySelector('.colonne__done');
-            // }
+         
             deplacerElement(elementParent, selectedValue, colonneCible);
         });
     });
@@ -63,13 +58,6 @@ export function afficherProjets() {
         done: document.querySelector('.colonne__done'),
     }
 
-    // const colonneAfaire = document.querySelector('.colonne__toDo');
-    // const colonneEnCours = document.querySelector('.colonne__doing');
-    // const colonneTermine = document.querySelector('.colonne__done');
-
-    // colonneAfaire.innerHTML = '';
-    // colonneEnCours.innerHTML = '';
-    // colonneTermine.innerHTML = '';
 
     Object.values(colonnesMap).forEach((c) => { c.innerHTML = '' })
 
@@ -81,23 +69,9 @@ export function afficherProjets() {
             let colonneCible = colonnesMap[projet.state];
             colonneCible.appendChild(elementProjet);
 
-            // switch (projet.state) {
-            //     case 'todo':
-            //         colonneAfaire.appendChild(elementProjet);
-            //         break;
-            //     case 'doing':
-            //         colonneEnCours.appendChild(elementProjet);
-            //         break;
-            //     case 'done':
-            //         colonneTermine.appendChild(elementProjet);
-            //         break;
-            //     default:
-            //         break;
-            // }
-
         });
     });
-    gererChoix(); // Appel de la fonction pour gérer l'événement de sélection des options
+    gererChoix(); 
 }
     gererChoix();
 
