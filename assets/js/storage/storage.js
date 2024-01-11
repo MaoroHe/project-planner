@@ -5,10 +5,7 @@ export function storage() {
     const btn = document.getElementById('form_valid');
 
     function guidGenerator() {
-        var S4 = function() {
-            return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
-        };
-        return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+            return Date.now().toString(16) + Math.floor(Math.random() * 1000).toString(16)
     }
 
     btn.addEventListener('click', () => {

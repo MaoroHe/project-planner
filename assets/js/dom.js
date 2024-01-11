@@ -1,10 +1,13 @@
 import { trierParStatut } from "./tri.js";
+import { deletes } from "./delete/delete.js";
+import { modifierTache } from "./modifie.js";
 
 let colonnesMap
 
 export function genererElementProjet(project) {
     const elementProjet = document.createElement('div');
     elementProjet.dataset.id = project.id;
+    elementProjet.dataset.end = project.end;
     elementProjet.classList.add('project');
     elementProjet.innerHTML = `
         <button class="delete">X</button>
@@ -26,7 +29,10 @@ export function genererElementProjet(project) {
 }
 
 function deplacerElement(element, selectedValue, colonneCible) {
-    colonneCible.appendChild(element);
+
+    if (document.querySelector('#displayMode').value !== 'uneColonne') {
+        colonneCible.appendChild(element);
+    }
 
     const taches = JSON.parse(window.localStorage.getItem('project'));
 
@@ -44,7 +50,7 @@ function gererChoix() {
             const selectedValue = event.target.value.toLowerCase();
             const elementParent = event.target.closest('.project');
             let colonneCible = colonnesMap[selectedValue];
-         
+
             deplacerElement(elementParent, selectedValue, colonneCible);
         });
     });
@@ -71,7 +77,11 @@ export function afficherProjets() {
 
         });
     });
-    gererChoix(); 
-}
     gererChoix();
+    document.querySelector('#afficherPopup').addEventListener('click', () => {
+        document.querySelector('dialog').showModal();
+    })
 
+    deletes();
+    modifierTache()
+}

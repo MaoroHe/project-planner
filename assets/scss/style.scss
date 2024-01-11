@@ -8,6 +8,42 @@ body {
     flex-direction: column;
 }
 
+.colonne__unique {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: auto;
+        margin-right: auto;
+        padding: 15px;
+        padding-top: 25px;
+        border-radius: 25px;
+        background-color: #EEF5FF;
+    
+    .project {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    
+        h3 {
+            height: fit-content;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 25px;
+        }
+    
+        p {
+            height: fit-content;
+            margin-bottom: auto;
+            margin-top: auto;
+            margin-left: 10px;
+        }
+    }
+}
 
 .colonne {
     display: flex;
@@ -16,6 +52,13 @@ body {
     margin-right: auto;
     justify-content: space-between;
     text-align: center;
+    
+
+    @include max-width($phone) {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
 
     .todo {
         display: flex;
@@ -24,12 +67,19 @@ body {
         align-items: center;
         background-color: #EEF5FF;
         border-radius: 20px;
+        margin: 15px;
+
+        @include max-width($phone) {
+            margin-bottom: 25px;
+            width: 90%;
+        }
 
         .colonne__toDo {
             display: flex;
             align-items: center;
             flex-direction: column;
             width: 100%;
+
             .project {
                 display: flex;
                 flex-direction: column;
@@ -45,7 +95,13 @@ body {
         flex-direction: column;
         background-color: #EEF5FF;
         align-items: center;
+        margin: 15px;
         border-radius: 20px;
+
+        @include max-width($phone) {
+            margin-bottom: 25px;
+            width: 90%;
+        }
 
         .colonne__doing {
             display: flex;
@@ -67,7 +123,13 @@ body {
         flex-direction: column;
         background-color: #EEF5FF;
         align-items: center;
+        margin: 15px;
         border-radius: 20px;
+
+        @include max-width($phone) {
+            margin-bottom: 25px;
+            width: 90%;
+        }
 
         .colonne__done {
             display: flex;

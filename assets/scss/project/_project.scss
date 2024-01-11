@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
+@mixin max-width($size) {
+    @media (max-width:$size) {
+        @content;
+    }
+}
+
+$phone: '900px';
+
 .project {
     color: #2D3250;
     display: flex;
@@ -90,4 +98,27 @@ h2 {
     color: white;
     background-color: #2D3250;
     border-radius: 5px;
+}
+
+#afficherPopup {
+    background-color: transparent;
+    border: 0px transparent;
+
+    // reset
+
+    background-color: #EEF5FF;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 22px;
+    width: 100px;
+    margin-left: 6px;
+    font-weight: 600;
+
+    // transition
+
+    transition: all 150ms linear;
+
+    &:hover {
+        border: 1.5px solid black;
+    }
 }
